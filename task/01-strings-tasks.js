@@ -22,9 +22,8 @@
  *   '',  'bb'  => 'bb'
  */
 function concatenateStrings(value1, value2) {
-    throw new Error('Not implemented');
+    return value1+value2;
 }
-
 
 /**
  * Returns the length of given string.
@@ -38,7 +37,7 @@ function concatenateStrings(value1, value2) {
  *   ''      => 0
  */
 function getStringLength(value) {
-    throw new Error('Not implemented');
+   return value.length;
 }
 
 /**
@@ -55,7 +54,7 @@ function getStringLength(value) {
  *   'Chuck','Norris'  => 'Hello, Chuck Norris!'
  */
 function getStringFromTemplate(firstName, lastName) {
-    throw new Error('Not implemented');
+    return 'Hello,'+' '+firstName+' '+lastName+'!';
 }
 
 /**
@@ -68,10 +67,9 @@ function getStringFromTemplate(firstName, lastName) {
  *   'Hello, John Doe!' => 'John Doe'
  *   'Hello, Chuck Norris!' => 'Chuck Norris'
  */
-function extractNameFromTemplate(value) {
-    throw new Error('Not implemented');
+function getStringFromTemplate(firstName, lastName) {
+    return 'Hello,'+' '+firstName+' '+lastName+'!';
 }
-
 
 /**
  * Returns a first char of the given string.
@@ -83,8 +81,8 @@ function extractNameFromTemplate(value) {
  *   'John Doe'  => 'J'
  *   'cat'       => 'c'
  */
-function getFirstChar(value) {
-    throw new Error('Not implemented');
+function getFirstChar(value){
+    return value[0];
 }
 
 /**
@@ -98,8 +96,8 @@ function getFirstChar(value) {
  *   'cat'              => 'cat'
  *   '\tHello, World! ' => 'Hello, World!'
  */
-function removeLeadingAndTrailingWhitespaces(value) {
-    throw new Error('Not implemented');
+function getFirstChar(value){
+    return value[0];
 }
 
 /**
@@ -113,8 +111,12 @@ function removeLeadingAndTrailingWhitespaces(value) {
  *   'A', 5  => 'AAAAA'
  *   'cat', 3 => 'catcatcat'
  */
-function repeatString(value, count) {
-    throw new Error('Not implemented');
+function repeatString(value, count){
+  var result='';
+    for(i=0; i<count;i++){
+      result=result+value;
+      }
+      return result;
 }
 
 /**
@@ -130,7 +132,8 @@ function repeatString(value, count) {
  *   'ABABAB','BA' => 'ABAB'
  */
 function removeFirstOccurrences(str, value) {
-    throw new Error('Not implemented');
+  console.log(str.indexOf(value));
+    return str.substring(0,str.indexOf(value))+str.substring(str.indexOf(value)+value.length);
 }
 
 /**
@@ -145,9 +148,8 @@ function removeFirstOccurrences(str, value) {
  *   '<a>' => 'a'
  */
 function unbracketTag(str) {
-    throw new Error('Not implemented');
+    return str.substring(1,str.length-1);
 }
-
 
 /**
  * Converts all characters of the specified string into the upper case
@@ -160,7 +162,7 @@ function unbracketTag(str) {
  *  'abcdefghijklmnopqrstuvwxyz' => 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
  */
 function convertToUpperCase(str) {
-    throw new Error('Not implemented');
+    return str.toUpperCase();
 }
 
 /**
@@ -174,7 +176,14 @@ function convertToUpperCase(str) {
  *   'info@gmail.com' => ['info@gmail.com']
  */
 function extractEmails(str) {
-    throw new Error('Not implemented');
+    var arr=str.split(';');
+    var result=[];
+    console.log(arr);
+    for(var i=0; i<arr.length;i++){
+      if(arr[i].indexOf('@')>=0){
+        result.push(arr[i]);
+        }
+      }
 }
 
 /**
